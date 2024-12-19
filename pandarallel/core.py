@@ -27,7 +27,7 @@ from .progress_bars import ProgressBarsType, get_progress_bars, progress_wrapper
 from .utils import WorkerStatus
 
 ON_WINDOWS = os.name == "nt"
-CONTEXT = multiprocessing.get_context("spawn" if ON_WINDOWS else "forkserver")
+CONTEXT = multiprocessing.get_context("spawn" if ON_WINDOWS else "fork")
 
 # Root of Memory File System
 MEMORY_FS_ROOT = os.environ.get("MEMORY_FS_ROOT", "/dev/shm")
